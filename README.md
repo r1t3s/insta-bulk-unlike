@@ -170,6 +170,7 @@ insta-bulk-unlike/
 ├── 📄 content.js          # Instagram page automation
 ├── 📄 background.js       # Service worker for extension lifecycle
 ├── 📄 privacy-policy.html # Privacy policy for Chrome Web Store
+└── 📄 LICENSE.md           # MIT License file
 └── 📄 README.md           # This file
 ```
 
@@ -300,13 +301,6 @@ git push origin feature/amazing-feature
 - **CSS**: Use CSS custom properties, mobile-first responsive design
 - **HTML**: Semantic markup, accessibility considerations
 - **Comments**: Document complex logic and user-facing features
-
-## 📊 Stats & Analytics
-
-![GitHub stars](https://img.shields.io/github/stars/r1t3s/insta-bulk-unlike?style=social)
-![GitHub forks](https://img.shields.io/github/forks/r1t3s/insta-bulk-unlike?style=social)
-![GitHub issues](https://img.shields.io/github/issues/r1t3s/insta-bulk-unlike)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/r1t3s/insta-bulk-unlike)
 
 ### Project Stats
 - **Lines of Code**: ~2,000+
