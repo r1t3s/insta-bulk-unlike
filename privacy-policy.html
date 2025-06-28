@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Insta Bulk Unlike</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .last-updated {
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .toc {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 35px;
+            border-left: 4px solid #667eea;
+        }
+
+        .toc h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .toc ul {
+            list-style: none;
+            columns: 2;
+            gap: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: #555;
+            text-decoration: none;
+            padding: 5px 0;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #667eea;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            scroll-margin-top: 20px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            color: #555;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+        }
+
+        h4 {
+            color: #666;
+            font-size: 1.1em;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .highlight-box h4 {
+            color: #d63031;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #00cec9;
+        }
+
+        .info-box h4 {
+            color: #00b894;
+            margin-top: 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table tr:hover {
+            background: #f8f9ff;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: #e17055;
+            margin-bottom: 15px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            background: white;
+            color: #e17055;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #74b9ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .toc ul {
+                columns: 1;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header .subtitle {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔒 Privacy Policy</h1>
+            <div class="subtitle">Insta Bulk Unlike - Social Media Manager</div>
+            <div class="last-updated">📅 Last updated: June 28, 2025</div>
+        </div>
+
+        <div class="content">
+            <div class="toc">
+                <h3>📋 Table of Contents</h3>
+                <ul>
+                    <li><a href="#overview">1. Overview</a></li>
+                    <li><a href="#data-collection">2. Data Collection</a></li>
+                    <li><a href="#data-usage">3. Data Usage</a></li>
+                    <li><a href="#data-storage">4. Data Storage</a></li>
+                    <li><a href="#data-sharing">5. Data Sharing</a></li>
+                    <li><a href="#security">6. Security Measures</a></li>
+                    <li><a href="#user-rights">7. User Rights</a></li>
+                    <li><a href="#compliance">8. Instagram Compliance</a></li>
+                    <li><a href="#children">9. Children's Privacy</a></li>
+                    <li><a href="#retention">10. Data Retention</a></li>
+                    <li><a href="#changes">11. Policy Changes</a></li>
+                    <li><a href="#contact">12. Contact Information</a></li>
+                </ul>
+            </div>
+
+            <div class="section" id="overview">
+                <h2><span class="icon">🌟</span>1. Overview</h2>
+                <p>
+                    Insta Bulk Unlike ("we", "our", or "us") is committed to protecting your privacy and ensuring transparency about our data practices. This Privacy Policy explains how our Chrome extension handles your information when you use our service to manage Instagram liked posts.
+                </p>
+                <p>
+                    <strong>Key Principle:</strong> We believe in data minimization and local processing. Your personal information stays on your device, and we do not collect, transmit, or store any personal data on external servers.
+                </p>
+            </div>
+
+            <div class="section" id="data-collection">
+                <h2><span class="icon">📊</span>2. Data Collection</h2>
+                
+                <h3>2.1 Information We Store Locally</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Purpose</th>
+                            <th>Storage Location</th>
+                            <th>Retention Period</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>User Preferences</strong></td>
+                            <td>Speed settings, batch sizes, delay configurations</td>
+                            <td>Chrome Local Storage</td>
+                            <td>Until extension removal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Daily Usage Counters</strong></td>
+                            <td>Track daily post processing for safety limits</td>
+                            <td>Chrome Local Storage</td>
+                            <td>24 hours (auto-reset)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Terms Acknowledgment</strong></td>
+                            <td>Record that user has accepted terms of use</td>
+                            <td>Chrome Local Storage</td>
+                            <td>Until extension removal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Session State</strong></td>
+                            <td>Current processing status and progress</td>
+                            <td>Browser Memory</td>
+                            <td>Until browser tab closes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>2.2 Information We DO NOT Collect</h3>
+                <div class="highlight-box">
+                    <h4>🚫 We Never Collect:</h4>
+                    <ul>
+                        <li><strong>Instagram Login Credentials:</strong> Usernames, passwords, or authentication tokens</li>
+                        <li><strong>Personal Profile Information:</strong> Name, email, phone number, or profile data</li>
+                        <li><strong>Posts Content or Metadata:</strong> Images, captions, comments, or post details</li>
+                        <li><strong>Usage Analytics:</strong> No tracking of user behavior or extension usage patterns</li>
+                        <li><strong>Device Information:</strong> No device identifiers, IP addresses, or browser fingerprinting</li>
+                        <li><strong>Location Data:</strong> No geographical information or location tracking</li>
+                        <li><strong>Third-Party Data:</strong> No integration with analytics services or advertising networks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="data-usage">
+                <h2><span class="icon">🎯</span>3. Data Usage</h2>
+                
+                <p>The locally stored data is used exclusively for the following purposes:</p>
+
+                <h3>3.1 Primary Functions</h3>
+                <ul>
+                    <li><strong>Settings Persistence:</strong> Remember your preferred speed modes, batch sizes, and delay configurations between browser sessions</li>
+                    <li><strong>Safety Enforcement:</strong> Enforce daily usage limits to help prevent violations of Instagram's terms of service</li>
+                    <li><strong>User Experience:</strong> Provide a personalized interface that adapts to your preferences</li>
+                    <li><strong>Progress Tracking:</strong> Maintain session state for real-time progress monitoring</li>
+                </ul>
+
+                <h3>3.2 Safety Features</h3>
+                <div class="info-box">
+                    <h4>🛡️ Built-in Safety Mechanisms:</h4>
+                    <p>Our daily usage tracking helps protect your Instagram account by:</p>
+                    <ul>
+                        <li>Preventing excessive automation that could trigger Instagram's anti-spam measures</li>
+                        <li>Enforcing recommended daily limits based on safe usage patterns</li>
+                        <li>Providing visual warnings when approaching usage thresholds</li>
+                        <li>Automatically resetting counters every 24 hours</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="data-storage">
+                <h2><span class="icon">💾</span>4. Data Storage</h2>
+                
+                <h3>4.1 Storage Technology</h3>
+                <p>All data is stored using Chrome's secure storage APIs:</p>
+                <ul>
+                    <li><strong>chrome.storage.local:</strong> For user preferences and settings</li>
+                    <li><strong>chrome.storage.sync:</strong> For cross-device synchronization (if enabled by user)</li>
+                    <li><strong>Browser Memory:</strong> For temporary session data</li>
+                </ul>
+
+                <h3>4.2 Storage Security</h3>
+                <p>Your data is protected by:</p>
+                <ul>
+                    <li><strong>Browser-level Encryption:</strong> Chrome automatically encrypts stored data</li>
+                    <li><strong>User Profile Isolation:</strong> Data is isolated to your specific browser profile</li>
+                    <li><strong>Local-only Storage:</strong> No data transmission to external servers</li>
+                    <li><strong>Permission-based Access:</strong> Only our extension can access its stored data</li>
+                </ul>
+
+                <h3>4.3 Storage Limits</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Approximate Size</th>
+                            <th>Maximum Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>User Preferences</td>
+                            <td>< 1KB</td>
+                            <td>10KB</td>
+                        </tr>
+                        <tr>
+                            <td>Daily Usage Counters</td>
+                            <td>< 100 bytes</td>
+                            <td>1KB</td>
+                        </tr>
+                        <tr>
+                            <td>Session State</td>
+                            <td>< 500 bytes</td>
+                            <td>5KB</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section" id="data-sharing">
+                <h2><span class="icon">🤝</span>5. Data Sharing</h2>
+                
+                <div class="highlight-box">
+                    <h4>🔒 Zero Data Sharing Policy</h4>
+                    <p><strong>We do not share, sell, rent, or transmit any user data to third parties. Period.</strong></p>
+                </div>
+
+                <h3>5.1 No Third-Party Integrations</h3>
+                <p>Our extension operates independently and does not integrate with:</p>
+                <ul>
+                    <li>Analytics services (Google Analytics, etc.)</li>
+                    <li>Advertising networks</li>
+                    <li>Social media platforms (beyond Instagram automation)</li>
+                    <li>Data brokers or marketing companies</li>
+                    <li>Cloud storage services</li>
+                    <li>External APIs or web services</li>
+                </ul>
+
+                <h3>5.2 Legal Compliance</h3>
+                <p>Since we do not collect or store personal data externally, we have no data to share even if legally compelled to do so. All data remains on your local device under your control.</p>
+            </div>
+
+            <div class="section" id="security">
+                <h2><span class="icon">🔐</span>6. Security Measures</h2>
+                
+                <h3>6.1 Technical Security</h3>
+                <ul>
+                    <li><strong>Local Processing:</strong> All automation and data processing occurs entirely within your browser</li>
+                    <li><strong>No Network Communication:</strong> Extension does not make external network requests</li>
+                    <li><strong>Manifest V3 Compliance:</strong> Uses the latest Chrome extension security standards</li>
+                    <li><strong>Minimal Permissions:</strong> Requests only essential permissions for functionality</li>
+                    <li><strong>Content Security Policy:</strong> Prevents injection of malicious scripts</li>
+                </ul>
+
+                <h3>6.2 Permission Transparency</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Permission</th>
+                            <th>Purpose</th>
+                            <th>Scope</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>activeTab</code></td>
+                            <td>Access current Instagram tab for automation</td>
+                            <td>Only when extension is actively used</td>
+                        </tr>
+                        <tr>
+                            <td><code>storage</code></td>
+                            <td>Save user preferences locally</td>
+                            <td>Local browser storage only</td>
+                        </tr>
+                        <tr>
+                            <td><code>scripting</code></td>
+                            <td>Inject automation scripts into Instagram</td>
+                            <td>instagram.com domain only</td>
+                        </tr>
+                        <tr>
+                            <td><code>host_permissions</code></td>
+                            <td>Access Instagram website content</td>
+                            <td>*.instagram.com only</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>6.3 Security Best Practices</h3>
+                <div class="info-box">
+                    <h4>🛡️ How We Protect You:</h4>
+                    <ul>
+                        <li><strong>Code Minification:</strong> Extension code is optimized and obfuscated to prevent tampering</li>
+                        <li><strong>Regular Updates:</strong> Security patches and improvements are released regularly</li>
+                        <li><strong>Open Source Principles:</strong> Core functionality can be audited for security</li>
+                        <li><strong>No External Dependencies:</strong> Reduces attack surface by avoiding third-party libraries</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="user-rights">
+                <h2><span class="icon">⚖️</span>7. User Rights</h2>
+                
+                <h3>7.1 Data Control</h3>
+                <p>Since all data is stored locally on your device, you have complete control:</p>
+                <ul>
+                    <li><strong>Access:</strong> View all stored data through Chrome's developer tools</li>
+                    <li><strong>Modification:</strong> Change settings and preferences at any time</li>
+                    <li><strong>Deletion:</strong> Remove all data by uninstalling the extension</li>
+                    <li><strong>Export:</strong> Backup settings by copying Chrome storage data</li>
+                </ul>
+
+                <h3>7.2 Data Portability</h3>
+                <p>You can:</p>
+                <ul>
+                    <li>Export your settings to backup files</li>
+                    <li>Transfer settings between different Chrome profiles</li>
+                    <li>Reset all data to default values</li>
+                    <li>Selectively clear specific data types</li>
+                </ul>
+
+                <h3>7.3 Right to Withdraw Consent</h3>
+                <p>You can:</p>
+                <ul>
+                    <li>Disable the extension at any time</li>
+                    <li>Revoke extension permissions through Chrome settings</li>
+                    <li>Uninstall the extension to remove all data</li>
+                    <li>Block extension access to specific websites</li>
+                </ul>
+            </div>
+
+            <div class="section" id="compliance">
+                <h2><span class="icon">📜</span>8. Instagram Terms Compliance</h2>
+                
+                <div class="highlight-box">
+                    <h4>⚠️ Important Responsibility Notice</h4>
+                    <p>Users are solely responsible for ensuring their use of this extension complies with Instagram's Terms of Service and Community Guidelines.</p>
+                </div>
+
+                <h3>8.1 Automation Disclosure</h3>
+                <p>This extension automates interactions with Instagram. Users should be aware that:</p>
+                <ul>
+                    <li>Instagram's Terms of Service may restrict automated tools</li>
+                    <li>Excessive automation may result in account restrictions</li>
+                    <li>We provide safety features but cannot guarantee compliance</li>
+                    <li>Users should read and understand Instagram's current policies</li>
+                </ul>
+
+                <h3>8.2 Recommended Practices</h3>
+                <ul>
+                    <li>Start with conservative settings (Safe Mode)</li>
+                    <li>Respect daily usage limits</li>
+                    <li>Take regular breaks between processing sessions</li>
+                    <li>Monitor your account for any warnings from Instagram</li>
+                    <li>Discontinue use if you receive policy violation notices</li>
+                </ul>
+            </div>
+
+            <div class="section" id="children">
+                <h2><span class="icon">👶</span>9. Children's Privacy</h2>
+                
+                <h3>9.1 Age Restrictions</h3>
+                <p>Our extension is not intended for users under 13 years of age. We do not knowingly collect or store data from children under 13.</p>
+
+                <h3>9.2 Parental Guidance</h3>
+                <p>If you are a parent or guardian and believe your child has used this extension:</p>
+                <ul>
+                    <li>The extension stores no personal information externally</li>
+                    <li>All data remains on the local device</li>
+                    <li>You can remove the extension from their browser</li>
+                    <li>Contact us if you have concerns about usage</li>
+                </ul>
+
+                <h3>9.3 Educational Use</h3>
+                <p>For educational purposes, we recommend:</p>
+                <ul>
+                    <li>Adult supervision when children use automation tools</li>
+                    <li>Discussion about responsible social media usage</li>
+                    <li>Understanding of platform terms and digital citizenship</li>
+                </ul>
+            </div>
+
+            <div class="section" id="retention">
+                <h2><span class="icon">📅</span>10. Data Retention</h2>
+                
+                <h3>10.1 Automatic Data Expiration</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Retention Period</th>
+                            <th>Cleanup Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Daily Usage Counters</td>
+                            <td>24 hours</td>
+                            <td>Automatic reset at midnight UTC</td>
+                        </tr>
+                        <tr>
+                            <td>Session State</td>
+                            <td>Until tab close</td>
+                            <td>Automatic cleanup on tab/browser close</td>
+                        </tr>
+                        <tr>
+                            <td>User Preferences</td>
+                            <td>Until extension removal</td>
+                            <td>Manual deletion or extension uninstall</td>
+                        </tr>
+                        <tr>
+                            <td>Terms Acknowledgment</td>
+                            <td>Until extension removal</td>
+                            <td>Manual deletion or extension uninstall</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>10.2 Manual Data Removal</h3>
+                <p>Users can manually remove data by:</p>
+                <ul>
+                    <li><strong>Extension Settings:</strong> Use built-in "Reset to Defaults" option</li>
+                    <li><strong>Chrome Settings:</strong> Clear site data for the extension</li>
+                    <li><strong>Extension Removal:</strong> Uninstall the extension completely</li>
+                    <li><strong>Browser Reset:</strong> Reset Chrome to remove all extension data</li>
+                </ul>
+            </div>
+
+            <div class="section" id="changes">
+                <h2><span class="icon">🔄</span>11. Policy Changes</h2>
+                
+                <h3>11.1 Update Notifications</h3>
+                <p>We may update this privacy policy occasionally. When we do:</p>
+                <ul>
+                    <li>The "Last updated" date will be revised</li>
+                    <li>Significant changes will be highlighted in extension updates</li>
+                    <li>Users will be notified through the extension interface</li>
+                    <li>Continued use constitutes acceptance of updated terms</li>
+                </ul>
+
+                <h3>11.2 Version History</h3>
+                <ul>
+                    <li><strong>v1.0 (June 28, 2025):</strong> Initial privacy policy creation</li>
+                    <li><strong>Future updates:</strong> Will be documented here</li>
+                </ul>
+
+                <h3>11.3 Transparency Commitment</h3>
+                <p>We commit to:</p>
+                <ul>
+                    <li>Maintaining transparency about any data practice changes</li>
+                    <li>Providing clear explanations for policy updates</li>
+                    <li>Giving users adequate notice before implementing changes</li>
+                    <li>Maintaining the core principle of local-only data storage</li>
+                </ul>
+            </div>
+
+            <div class="section" id="contact">
+                <h2><span class="icon">📞</span>12. Contact Information</h2>
+                
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>For questions, concerns, or feedback about this privacy policy:</p>
+                    <div class="contact-links">
+                        <a href="https://github.com/r1t3s/insta-bulk-unlike/issues" target="_blank">
+                            📝 GitHub Issues
+                        </a>
+                        <a href="https://github.com/r1t3s" target="_blank">
+                            👨‍💻 Developer Profile
+                        </a>
+                        <a href="mailto:privacy@example.com">
+                            📧 Email Support
+                        </a>
+                    </div>
+                </div>
+
+                <h3>12.1 Response Time</h3>
+                <p>We aim to respond to privacy-related inquiries within:</p>
+                <ul>
+                    <li><strong>General Questions:</strong> 2-3 business days</li>
+                    <li><strong>Privacy Concerns:</strong> 1-2 business days</li>
+                    <li><strong>Security Issues:</strong> Within 24 hours</li>
+                    <li><strong>Bug Reports:</strong> 1-3 business days</li>
+                </ul>
+
+                <h3>12.2 Additional Resources</h3>
+                <ul>
+                    <li><strong>Project Repository:</strong> <a href="https://github.com/r1t3s/insta-bulk-unlike" target="_blank">github.com/r1t3s/insta-bulk-unlike</a></li>
+                    <li><strong>Chrome Web Store:</strong> [Link available after publication]</li>
+                    <li><strong>Developer Website:</strong> [Coming Soon]</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Insta Bulk Unlike - Privacy Policy</strong></p>
+            <p>Effective Date: June 28, 2025 | Version 1.0</p>
+            <p>Built with ❤️ by <a href="https://github.com/r1t3s" target="_blank">r1t3s</a></p>
+            <p><em>Last reviewed: June 28, 2025 at 19:02 UTC</em></p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-to-top functionality
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                if (!document.querySelector('.scroll-top')) {
+                    const scrollButton = document.createElement('button');
+                    scrollButton.className = 'scroll-top';
+                    scrollButton.innerHTML = '↑';
+                    scrollButton.style.cssText = `
+                        position: fixed;
+                        bottom: 20px;
+                        right: 20px;
+                        background: #667eea;
+                        color: white;
+                        border: none;
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                        font-size: 20px;
+                        cursor: pointer;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                        transition: all 0.3s ease;
+                        z-index: 1000;
+                    `;
+                    scrollButton.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                    document.body.appendChild(scrollButton);
+                }
+            } else {
+                const scrollButton = document.querySelector('.scroll-top');
+                if (scrollButton) {
+                    scrollButton.remove();
+                }
+            }
+        });
+
+        // Print current timestamp for verification
+        console.log('Privacy Policy loaded at:', new Date().toISOString());
+    </script>
+</body>
+</html>
