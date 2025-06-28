@@ -1,13 +1,11 @@
 # 🚀 Insta Bulk Unlike - Social Media Manager
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-brightgreen?style=for-the-badge&logo=googlechrome)](https://chrome.google.com/webstore)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?style=for-the-badge)](https://github.com/r1t3s/insta-bulk-unlike/releases)
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg?style=for-the-badge)](https://github.com/r1t3s)
 
 > **Efficiently manage your Instagram liked posts with smart batch processing, safety features, and customizable speed controls.**
 
-![Extension Preview](https://via.placeholder.com/800x400/667eea/ffffff?text=Extension+Preview+Screenshot)
 
 ## ✨ Key Features
 
@@ -50,11 +48,11 @@
 
 | Main Interface | Speed Presets | Advanced Settings |
 |----------------|---------------|-------------------|
-| ![Main](https://via.placeholder.com/250x400/f09433/ffffff?text=Main+Interface) | ![Speed](https://via.placeholder.com/250x400/e6683c/ffffff?text=Speed+Presets) | ![Settings](https://via.placeholder.com/250x400/dc2743/ffffff?text=Advanced+Settings) |
+| ![Main](https://github.com/r1t3s/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-main-interface.png) | ![Speed](https://github.com/r1t3s/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-main-interface-2.png) | ![Settings](https://github.com/r1t3s/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-advanced-settings.png) |
 
-| Progress Tracking | Success Message | Safety Features |
-|-------------------|-----------------|-----------------|
-| ![Progress](https://via.placeholder.com/250x400/cc2366/ffffff?text=Progress+Tracking) | ![Success](https://via.placeholder.com/250x400/bc1888/ffffff?text=Success+Message) | ![Safety](https://via.placeholder.com/250x400/667eea/ffffff?text=Safety+Features) |
+| Progress Tracking | Safety Features |
+|-------------------|-----------------|
+| ![Progress](https://github.com/r1t3s/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-processing-demo.png) | ![Safety](https://github.com/r1t3s/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-safety-features.png) |
 
 ## 🚀 Installation
 
