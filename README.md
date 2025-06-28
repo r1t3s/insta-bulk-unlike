@@ -245,7 +245,7 @@ zip -r insta-bulk-unlike-v1.0.0.zip . -x "*.git*" "*.DS_Store" "*.md"
 - **Permission Scope**: Limited to Instagram.com only
 
 ### Privacy Policy
-Full privacy policy available at: [privacy-policy.html](./privacy-policy.html)
+Full privacy policy available at: [privacy-policy.html](https://r1t3s.github.io/insta-bulk-unlike/privacy-policy.html)
 
 ## 📈 Roadmap
 
