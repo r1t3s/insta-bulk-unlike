@@ -1,7 +1,7 @@
 # 🚀 Insta Bulk Unlike - Social Media Manager
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?style=for-the-badge)](https://github.com/r1t3s/insta-bulk-unlike/releases)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg?style=for-the-badge)](https://github.com/r1t3s/insta-bulk-unlike/releases)
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg?style=for-the-badge)](https://github.com/r1t3s)
 
 > **Efficiently manage your Instagram liked posts with smart batch processing, safety features, and customizable speed controls.**
