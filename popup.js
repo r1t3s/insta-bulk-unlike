@@ -1,7 +1,5 @@
 // Insta Bulk Unlike Extension - Enhanced Popup Script v1.1
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🎛️ Enhanced Popup loaded v1.1');
-
     // Get essential DOM elements
     const pageStatus = document.getElementById('page-status');
     const pageStatusText = document.getElementById('page-status-text');
@@ -97,22 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
         speedPreset: 'safe'
     };
 
-    // Test that all elements exist
-    console.log('🔍 Checking elements:', {
-        pageStatus: !!pageStatus,
-        progressSection: !!progressSection,
-        messageSection: !!messageSection,
-        speedButtons: speedButtons.length
-    });
-
-    // Enhanced event listeners
     try {
         // Disclaimer toggle
         if (disclaimerToggle) {
             disclaimerToggle.addEventListener('click', function() {
-                console.log('📋 Disclaimer toggle clicked');
                 disclaimerOpen = !disclaimerOpen;
-
                 if (disclaimerOpen) {
                     disclaimerDetails.classList.add('open');
                     disclaimerToggle.textContent = 'Show Less';
@@ -127,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Terms acknowledgment
         if (acknowledgeTerms) {
             acknowledgeTerms.addEventListener('change', function() {
-                console.log('✅ Terms acknowledged:', acknowledgeTerms.checked);
                 updateStartButtonState();
                 saveSettings();
             });
@@ -144,9 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Advanced settings toggle
         if (advancedToggleBtn) {
             advancedToggleBtn.addEventListener('click', function() {
-                console.log('⚙️ Advanced settings toggle clicked');
                 advancedSettingsOpen = !advancedSettingsOpen;
-
                 if (advancedSettingsOpen) {
                     advancedSettings.classList.add('open');
                     advancedToggleBtn.classList.add('active');
@@ -165,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.target.value = value;
                 if (dailyLimitValue) dailyLimitValue.textContent = value;
                 if (dailyLimitDisplay) dailyLimitDisplay.textContent = value;
-                console.log('📊 Daily limit changed to:', value);
                 updateDailyUsage();
                 saveSettings();
             });
@@ -177,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const value = Math.min(parseInt(e.target.value), SAFETY_LIMITS.maxBatchSize);
                 e.target.value = value;
                 if (batchSizeValue) batchSizeValue.textContent = value;
-                console.log('📊 Batch size changed to:', value);
                 saveSettings();
             });
         }
@@ -187,7 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const value = Math.max(parseInt(e.target.value), SAFETY_LIMITS.minSelectionDelay);
                 e.target.value = value;
                 if (selectionDelayValue) selectionDelayValue.textContent = (value / 1000).toFixed(1);
-                console.log('⏱️ Selection delay changed to:', value);
                 saveSettings();
             });
         }
@@ -197,7 +178,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const value = Math.max(parseInt(e.target.value), SAFETY_LIMITS.minBatchDelay);
                 e.target.value = value;
                 if (batchDelayValue) batchDelayValue.textContent = (value / 1000).toFixed(1);
-                console.log('⏱️ Batch delay changed to:', value);
                 saveSettings();
             });
         }
@@ -218,7 +198,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset settings button
         if (resetSettingsBtn) {
             resetSettingsBtn.addEventListener('click', function() {
-                console.log('🔄 Reset settings clicked');
                 if (confirm('Reset all settings to recommended defaults?')) {
                     resetToDefaults();
                 }
@@ -235,7 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Open likes page button
         if (openLikesBtn) {
             openLikesBtn.addEventListener('click', async function() {
-                console.log('🔗 Open likes page clicked');
                 try {
                     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
@@ -252,7 +230,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(checkTabStatus, 3000);
 
                 } catch (error) {
-                    console.error('❌ Error opening likes page:', error);
                     showMessage('error', 'Navigation Error', 'Could not open likes page. Please navigate manually.');
                 }
             });
@@ -261,8 +238,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Enhanced start button
         if (startBtn) {
             startBtn.addEventListener('click', async function() {
-                console.log('🚀 Start button clicked');
-
                 if (!acknowledgeTerms.checked) {
                     showMessage('warning', 'Terms Required', 'Please acknowledge the terms and conditions first.');
                     return;
@@ -300,71 +275,50 @@ document.addEventListener('DOMContentLoaded', function() {
         // Stop button
         if (stopBtn) {
             stopBtn.addEventListener('click', async function() {
-                console.log('⏹️ Stop button clicked');
                 try {
                     if (currentTab) {
                         await sendMessageToTab(currentTab.id, { action: 'stopUnlike' });
                         showMessage('info', 'Stopping', 'Process is being stopped safely...');
                     }
-                } catch (error) {
-                    console.error('❌ Error stopping process:', error);
-                }
+                } catch (error) {}
             });
         }
 
-    } catch (error) {
-        console.error('❌ Error setting up event listeners:', error);
-    }
+    } catch (error) {}
 
-    // Speed preset selection
     function selectSpeedPreset(speed) {
-        console.log('🏃 Selecting speed preset:', speed);
-
-        // Update active button
         speedButtons.forEach(btn => btn.classList.remove('active'));
         const selectedBtn = document.querySelector(`[data-speed="${speed}"]`);
         if (selectedBtn) selectedBtn.classList.add('active');
-
-        // Apply preset settings
         const preset = SPEED_PRESETS[speed];
         if (preset && batchSizeInput && selectionDelayInput && batchDelayInput) {
             batchSizeInput.value = preset.batchSize;
             if (batchSizeValue) batchSizeValue.textContent = preset.batchSize;
-
             selectionDelayInput.value = preset.selectionDelay;
             if (selectionDelayValue) selectionDelayValue.textContent = (preset.selectionDelay / 1000).toFixed(1);
-
             batchDelayInput.value = preset.batchDelay;
             if (batchDelayValue) batchDelayValue.textContent = (preset.batchDelay / 1000).toFixed(1);
-
             showMessage('info', `${preset.name} Selected`, 'Settings have been updated to the selected speed preset.');
         }
-
         saveSettings();
     }
 
-    // Enhanced message sending
     async function sendMessageToTab(tabId, message) {
         return new Promise((resolve) => {
             if (!tabId) {
-                console.warn('No tab ID available');
                 resolve(null);
                 return;
             }
-
             chrome.tabs.sendMessage(tabId, message, (response) => {
                 if (chrome.runtime.lastError) {
-                    console.warn('Message sending failed:', chrome.runtime.lastError.message);
                     resolve(null);
                 } else {
-                    console.log('📥 Response received:', response);
                     resolve(response);
                 }
             });
         });
     }
 
-    // Enhanced start process
     async function startProcess(count) {
         try {
             currentSettings = {
@@ -372,26 +326,17 @@ document.addEventListener('DOMContentLoaded', function() {
                           selectionDelay: parseInt(selectionDelayInput.value) || 2500,
                           batchDelay: parseInt(batchDelayInput.value) || 8000
             };
-
-            console.log('📤 Sending start message with settings:', currentSettings);
-
             const response = await sendMessageToTab(currentTab.id, {
                 action: 'startUnlike',
                 count: count,
                 settings: currentSettings
             });
-
             if (response) {
-                console.log('✅ Process started successfully');
                 isProcessing = true;
                 processStartTime = Date.now();
-
-                // Update UI
                 startBtn.style.display = 'none';
                 if (stopBtn) stopBtn.style.display = 'flex';
                 if (unlikeCountInput) unlikeCountInput.disabled = true;
-
-                // Show progress section
                 showProgress();
                 updateProgress({
                     text: 'Starting process...',
@@ -399,22 +344,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     current: 0,
                     total: count
                 });
-
             } else {
                 throw new Error('No response from content script');
             }
-
         } catch (error) {
-            console.error('❌ Start process error:', error);
             showMessage('error', 'Start Failed', 'Failed to start process. Please refresh the page and try again.');
         }
     }
 
-    // Enhanced progress display
     function showProgress() {
         if (progressSection) {
             progressSection.style.display = 'block';
-            hideMessage(); // Hide any existing messages
+            hideMessage();
         }
     }
 
@@ -426,34 +367,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateProgress(data) {
         if (!progressSection) return;
-
-        // Update progress bar
         if (data.percentage !== undefined && progressFill) {
             progressFill.style.width = `${Math.min(100, Math.max(0, data.percentage))}%`;
         }
-
-        // Update progress text
         if (data.text && progressText) {
             progressText.textContent = data.text;
         }
-
-        // Update stats
         if (data.current !== undefined && data.total !== undefined && progressStats) {
             progressStats.textContent = `${data.current}/${data.total} posts`;
         }
-
-        // Calculate and update ETA
         if (data.current && data.total && processStartTime && progressEta) {
             const elapsed = Date.now() - processStartTime;
-            const rate = data.current / elapsed; // posts per ms
+            const rate = data.current / elapsed;
             const remaining = data.total - data.current;
             const etaMs = remaining / rate;
-
             if (etaMs > 0 && isFinite(etaMs)) {
                 const etaSeconds = Math.ceil(etaMs / 1000);
                 const minutes = Math.floor(etaSeconds / 60);
                 const seconds = etaSeconds % 60;
-
                 if (minutes > 0) {
                     progressEta.textContent = `ETA: ${minutes}m ${seconds}s`;
                 } else {
@@ -461,13 +392,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-
-        // Update batch info
         if (data.details && progressBatchInfo) {
             progressBatchInfo.textContent = data.details;
         }
-
-        // Update title based on status
         if (progressTitle) {
             if (data.percentage >= 100) {
                 progressTitle.textContent = 'Completed!';
@@ -479,29 +406,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Enhanced message system
     function showMessage(type, title, details, duration = 5000) {
         if (!messageSection) return;
-
-        // Set message type class
         messageSection.className = `message-section ${type}`;
-
-        // Set icon based on type
         const icons = {
             success: '✅',
             error: '❌',
             warning: '⚠️',
             info: 'ℹ️'
         };
-
         if (messageIcon) messageIcon.textContent = icons[type] || 'ℹ️';
         if (messageText) messageText.textContent = title;
         if (messageDetails) messageDetails.textContent = details;
-
-        // Show message
         messageSection.style.display = 'block';
-
-        // Auto hide after duration (except for errors)
         if (type !== 'error' && duration > 0) {
             setTimeout(() => {
                 hideMessage();
@@ -515,39 +432,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Reset to default settings
     function resetToDefaults() {
-        // Speed preset
         selectSpeedPreset('safe');
-
-        // Daily limit
         if (dailyLimitInput) {
             dailyLimitInput.value = defaultSettings.dailyLimit;
             if (dailyLimitValue) dailyLimitValue.textContent = defaultSettings.dailyLimit;
             if (dailyLimitDisplay) dailyLimitDisplay.textContent = defaultSettings.dailyLimit;
         }
-
-        // Unlike count
         if (unlikeCountInput) {
             unlikeCountInput.value = defaultSettings.unlikeCount;
         }
-
         showMessage('success', 'Settings Reset', 'All settings have been reset to safe defaults.');
         saveSettings();
     }
 
-    // Update start button state
     function updateStartButtonState() {
         if (!startBtn || !acknowledgeTerms || !unlikeCountInput) return;
-
         const termsAccepted = acknowledgeTerms.checked;
         const validCount = parseInt(unlikeCountInput.value) > 0;
         const notProcessing = !isProcessing;
-
         const canStart = termsAccepted && validCount && notProcessing;
-
         startBtn.disabled = !canStart;
-
         if (!termsAccepted) {
             startBtn.innerHTML = '<span>⚠️ Please acknowledge terms first</span>';
         } else if (!validCount) {
@@ -562,84 +467,60 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Update status display
     function updateStatus(type, text) {
         if (pageStatus) pageStatus.className = `status-indicator ${type}`;
         if (pageStatusText) pageStatusText.textContent = text;
-        console.log(`📊 Status: ${type} - ${text}`);
     }
 
-    // Enhanced tab status checking
     async function checkTabStatus() {
         try {
-            console.log('🔍 Checking tab status...');
             const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
             currentTab = tab;
-
             if (!tab) {
                 updateStatus('error', 'No active tab found');
                 return;
             }
-
             if (tab.url.includes('instagram.com/your_activity/interactions/likes/')) {
-                console.log('✅ On likes page, testing communication...');
                 updateStatus('success', 'On likes page - testing connection...');
-
                 try {
                     const response = await sendMessageToTab(tab.id, { action: 'ping' });
-
                     if (response && response.status === 'ready') {
-                        console.log('✅ Communication successful!');
                         updateStatus('success', 'Ready! Extension loaded successfully');
                         if (controlsSection) controlsSection.style.display = 'block';
                         if (openLikesBtn) openLikesBtn.style.display = 'none';
                     } else {
                         throw new Error('No response from content script');
                     }
-
                 } catch (error) {
-                    console.error('❌ Communication failed:', error);
                     updateStatus('error', 'Extension loading... Please wait or refresh');
                 }
-
             } else if (tab.url.includes('instagram.com')) {
                 updateStatus('error', 'Please navigate to your likes page');
                 if (controlsSection) controlsSection.style.display = 'none';
                 if (openLikesBtn) openLikesBtn.style.display = 'flex';
-
             } else {
                 updateStatus('error', 'Please open Instagram first');
                 if (controlsSection) controlsSection.style.display = 'none';
                 if (openLikesBtn) openLikesBtn.style.display = 'flex';
             }
-
         } catch (error) {
-            console.error('❌ Tab status check error:', error);
             updateStatus('error', 'Error checking page status');
         }
     }
 
-    // Enhanced daily usage tracking
     function updateDailyUsage() {
         if (!dailyUsageSpan) return;
-
         const today = new Date().toISOString().split('T')[0];
         const currentDailyLimit = parseInt(dailyLimitInput?.value) || defaultSettings.dailyLimit;
-
         chrome.storage.local.get(['dailyUsage', 'lastUsageDate'], (result) => {
             let dailyUsage = 0;
-
             if (result.lastUsageDate === today) {
                 dailyUsage = result.dailyUsage || 0;
             }
-
             dailyUsageSpan.textContent = dailyUsage;
-
-            // Update safety notice styling based on usage
             const safetyNotice = document.getElementById('safety-notice');
             if (safetyNotice) {
                 safetyNotice.classList.remove('daily-limit-warning', 'daily-limit-near');
-
                 if (dailyUsage >= currentDailyLimit) {
                     safetyNotice.classList.add('daily-limit-warning');
                     startBtn.disabled = true;
@@ -647,12 +528,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     safetyNotice.classList.add('daily-limit-near');
                 }
             }
-
             updateStartButtonState();
         });
     }
 
-    // Enhanced settings management
     function saveSettings() {
         const settings = {
             batchSize: parseInt(batchSizeInput?.value) || defaultSettings.batchSize,
@@ -664,9 +543,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           termsAccepted: acknowledgeTerms?.checked || false,
                           disclaimerOpen
         };
-
         chrome.storage.sync.set(settings);
-        console.log('💾 Settings saved:', settings);
     }
 
     function loadSettings() {
@@ -674,171 +551,112 @@ document.addEventListener('DOMContentLoaded', function() {
             'batchSize', 'selectionDelay', 'batchDelay', 'unlikeCount',
             'dailyLimit', 'advancedSettingsOpen', 'termsAccepted', 'disclaimerOpen'
         ], (result) => {
-            console.log('📁 Loading settings:', result);
-
-            // Apply settings to inputs
             if (batchSizeInput) {
                 const batchSize = Math.min(result.batchSize || defaultSettings.batchSize, SAFETY_LIMITS.maxBatchSize);
                 batchSizeInput.value = batchSize;
                 if (batchSizeValue) batchSizeValue.textContent = batchSize;
             }
-
             if (selectionDelayInput) {
                 const selectionDelay = Math.max(result.selectionDelay || defaultSettings.selectionDelay, SAFETY_LIMITS.minSelectionDelay);
                 selectionDelayInput.value = selectionDelay;
                 if (selectionDelayValue) selectionDelayValue.textContent = (selectionDelay / 1000).toFixed(1);
             }
-
             if (batchDelayInput) {
                 const batchDelay = Math.max(result.batchDelay || defaultSettings.batchDelay, SAFETY_LIMITS.minBatchDelay);
                 batchDelayInput.value = batchDelay;
                 if (batchDelayValue) batchDelayValue.textContent = (batchDelay / 1000).toFixed(1);
             }
-
             if (unlikeCountInput) {
                 const unlikeCount = Math.min(result.unlikeCount || defaultSettings.unlikeCount, SAFETY_LIMITS.maxPostsPerSession);
                 unlikeCountInput.value = unlikeCount;
             }
-
             if (dailyLimitInput) {
                 const dailyLimit = Math.max(SAFETY_LIMITS.minDailyLimit, Math.min(result.dailyLimit || defaultSettings.dailyLimit, SAFETY_LIMITS.maxDailyLimit));
                 dailyLimitInput.value = dailyLimit;
                 if (dailyLimitValue) dailyLimitValue.textContent = dailyLimit;
                 if (dailyLimitDisplay) dailyLimitDisplay.textContent = dailyLimit;
             }
-
-            // Terms acceptance
             if (acknowledgeTerms) {
                 acknowledgeTerms.checked = result.termsAccepted || false;
             }
-
-            // Advanced settings state
             if (result.advancedSettingsOpen) {
                 advancedSettingsOpen = true;
                 if (advancedSettings) advancedSettings.classList.add('open');
                 if (advancedToggleBtn) advancedToggleBtn.classList.add('active');
             }
-
-            // Disclaimer state
             if (result.disclaimerOpen) {
                 disclaimerOpen = true;
                 if (disclaimerDetails) disclaimerDetails.classList.add('open');
                 if (disclaimerToggle) disclaimerToggle.textContent = 'Show Less';
             }
-
             updateStartButtonState();
         });
     }
 
-    // Listen for messages from content script
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-        console.log('📨 Popup received message:', message.action);
-
         if (message.action === 'updateProgress') {
             updateProgress(message.data);
-
         } else if (message.action === 'processComplete') {
-            console.log('✅ Process complete:', message.data.count);
             handleProcessComplete(message.data);
-
         } else if (message.action === 'processError') {
-            console.log('❌ Process error:', message.data.error);
             handleProcessError(message.data);
         }
     });
 
-    // Handle process completion
     function handleProcessComplete(data) {
         isProcessing = false;
-
-        // Reset UI
         if (startBtn) {
             startBtn.style.display = 'flex';
             startBtn.disabled = false;
         }
         if (stopBtn) stopBtn.style.display = 'none';
         if (unlikeCountInput) unlikeCountInput.disabled = false;
-
-        // Update progress to 100%
         updateProgress({
             text: 'Process completed!',
             percentage: 100,
             current: data.count,
             total: data.count
         });
-
-        // Calculate process duration
         const duration = processStartTime ? Math.round((Date.now() - processStartTime) / 1000) : 0;
         const durationText = duration > 60 ? `${Math.floor(duration / 60)}m ${duration % 60}s` : `${duration}s`;
-
-        // Show success message
         setTimeout(() => {
             hideProgress();
             showMessage('success', 'Process Completed!', `Successfully processed ${data.count} posts in ${durationText}`, 8000);
         }, 2000);
-
-        // Update daily usage
         const today = new Date().toISOString().split('T')[0];
         chrome.storage.local.get(['dailyUsage', 'lastUsageDate'], (result) => {
             let dailyUsage = 0;
-
             if (result.lastUsageDate === today) {
                 dailyUsage = result.dailyUsage || 0;
             }
-
             dailyUsage += data.count;
-
             chrome.storage.local.set({
                 dailyUsage: dailyUsage,
                 lastUsageDate: today
             });
-
             updateDailyUsage();
         });
     }
 
-    // Handle process error
     function handleProcessError(data) {
         isProcessing = false;
-
-        // Reset UI
         if (startBtn) {
             startBtn.style.display = 'flex';
             startBtn.disabled = false;
         }
         if (stopBtn) stopBtn.style.display = 'none';
         if (unlikeCountInput) unlikeCountInput.disabled = false;
-
-        // Hide progress and show error
         setTimeout(() => {
             hideProgress();
-            showMessage('error', 'Process Error', data.error, 0); // Don't auto-hide errors
+            showMessage('error', 'Process Error', data.error, 0);
         }, 1000);
     }
 
-    // Initialize everything
-    console.log('🔧 Initializing enhanced popup...');
-
-    // Load settings first
     loadSettings();
-
-    // Set default speed preset
     selectSpeedPreset('safe');
-
-    // Update daily usage
     updateDailyUsage();
-
-    // Start checking tab status
     checkTabStatus();
-
-    // Update start button state
     updateStartButtonState();
-
-    // Check status every 5 seconds
     setInterval(checkTabStatus, 5000);
-
-    // Update daily usage every minute
     setInterval(updateDailyUsage, 60000);
-
-    console.log('✅ Enhanced popup initialization complete');
 });

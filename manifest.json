@@ -1,14 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Insta Bulk Unlike - Social Media Manager",
+  "name": "Insta Bulk Unlike ",
   "version": "1.1.0",
-  "description": "Efficiently manage Instagram liked posts with smart batch processing, safety features, and customizable speed controls. Streamline your social media cleanup.",
+  "description": "Efficiently manage Instagram liked posts with smart batch processing, safety features, and customizable speed controls.",
   "author": "r1t3s",
 
   "permissions": [
     "activeTab",
-    "storage",
-    "scripting"
+    "storage"
   ],
 
   "host_permissions": [
