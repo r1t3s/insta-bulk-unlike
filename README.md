@@ -6,6 +6,7 @@
 
 > **Efficiently manage your Instagram liked posts with smart batch processing, safety features, and customizable speed controls.**
 
+[🔗 Chrome Web Store Link](https://chromewebstore.google.com/detail/insta-bulk-unlike/mcilmhhammlmlcneahdhnmoohbhanhec)
 
 ## ✨ Key Features
 
