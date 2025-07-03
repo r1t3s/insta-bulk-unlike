@@ -57,7 +57,7 @@
 ## 🚀 Installation
 
 ### From Chrome Web Store (Recommended)
-1. Visit the [Chrome Web Store page](https://chrome.google.com/webstore) (Coming Soon)
+1. Visit the [Chrome Web Store page](https://chromewebstore.google.com/detail/insta-bulk-unlike/mcilmhhammlmlcneahdhnmoohbhanhec) 
 2. Click "Add to Chrome"
 3. Confirm installation in the popup
 
@@ -146,7 +146,6 @@
 ### Permissions Explained
 - `activeTab`: Access the current Instagram tab for automation
 - `storage`: Save user preferences and daily usage tracking
-- `scripting`: Inject content scripts for Instagram interaction
 - `host_permissions`: Only works on instagram.com domains
 
 ### Performance
@@ -154,49 +153,6 @@
 - **CPU Impact**: Minimal during operation
 - **Network**: No external requests (all processing is local)
 - **Storage**: < 1KB for settings and usage data
-
-## 🔧 Development
-
-### Project Structure
-```
-insta-bulk-unlike/
-├── 📁 icons/              # Extension icons (16px, 48px, 128px)
-├── 📄 manifest.json       # Extension configuration
-├── 📄 popup.html          # Main interface HTML
-├── 📄 popup.css           # Styling and animations
-├── 📄 popup.js            # UI logic and settings management
-├── 📄 content.js          # Instagram page automation
-├── 📄 background.js       # Service worker for extension lifecycle
-├── 📄 privacy-policy.html # Privacy policy for Chrome Web Store
-└── 📄 LICENSE.md           # MIT License file
-└── 📄 README.md           # This file
-```
-
-### Key Technologies
-- **Manifest V3**: Latest Chrome extension standard
-- **Vanilla JavaScript**: No external dependencies
-- **Chrome Storage API**: Settings persistence
-- **Chrome Scripting API**: Dynamic content injection
-- **Modern CSS**: Flexbox, Grid, Custom Properties
-- **Instagram Web API**: DOM manipulation and automation
-
-### Local Development
-```bash
-# Clone repository
-git clone https://github.com/r1t3s/insta-bulk-unlike.git
-cd insta-bulk-unlike
-
-# Load in Chrome for testing
-# Go to chrome://extensions/ → Developer mode → Load unpacked
-
-# Make changes and reload extension for testing
-```
-
-### Building for Production
-```bash
-# Create production package
-zip -r insta-bulk-unlike-v1.0.0.zip . -x "*.git*" "*.DS_Store" "*.md"
-```
 
 ## 🐛 Troubleshooting
 
@@ -247,65 +203,16 @@ Full privacy policy available at: [privacy-policy.html](https://r1t3s.github.io/
 
 ## 📈 Roadmap
 
-### Version 1.1 (Planned)
+### Version 1.2 (Future)
 - [ ] **Support for Other Platforms**: Twitter, Facebook likes management
 - [ ] **Backup/Restore**: Export and import settings
 - [ ] **Scheduling**: Set specific times for processing
 - [ ] **Detailed Analytics**: Processing history and statistics
-
-### Version 1.2 (Future)
 - [ ] **Selective Processing**: Filter posts by date, content type
 - [ ] **Bulk Actions**: Multiple action types beyond unlike
 - [ ] **Theme Options**: Dark mode, custom color schemes
 - [ ] **Cloud Sync**: Sync settings across devices
 
-### Community Requests
-- [ ] **Firefox Support**: Mozilla extension version
-- [ ] **Mobile Support**: Android/iOS app version
-- [ ] **API Integration**: Direct Instagram API usage (if available)
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-### Ways to Contribute
-- 🐛 **Bug Reports**: Found an issue? Let us know!
-- 💡 **Feature Requests**: Have an idea? We'd love to hear it!
-- 🔧 **Code Contributions**: Submit pull requests
-- 📖 **Documentation**: Improve guides and explanations
-- 🌍 **Translations**: Help make this available in more languages
-
-### Development Setup
-```bash
-# Fork the repository
-git clone https://github.com/r1t3s/insta-bulk-unlike.git
-cd insta-bulk-unlike
-
-# Create feature branch
-git checkout -b feature/amazing-feature
-
-# Make changes and test thoroughly
-# Follow existing code style and patterns
-
-# Commit changes
-git commit -m "Add amazing feature"
-
-# Push and create pull request
-git push origin feature/amazing-feature
-```
-
-### Code Style Guidelines
-- **JavaScript**: Use modern ES6+ features, async/await for promises
-- **CSS**: Use CSS custom properties, mobile-first responsive design
-- **HTML**: Semantic markup, accessibility considerations
-- **Comments**: Document complex logic and user-facing features
-
-### Project Stats
-- **Lines of Code**: ~2,000+
-- **Development Time**: 40+ hours
-- **Features**: 15+ major features
-- **Browser Support**: Chrome, Edge, Brave
-- **Safety Features**: 10+ built-in protections
 
 ## 📝 Changelog
 
@@ -334,6 +241,11 @@ git push origin feature/amazing-feature
 - Error handling and recovery
 - Cross-session settings persistence
 - Responsive design for all screen sizes
+
+### v1.1.0 (June 2, 2025)
+- Removed scripting permission
+- Fixed critical bugs
+
 
 ## 📄 License
 
