@@ -243,7 +243,7 @@ Full privacy policy available at: [privacy-policy.html](https://r1t3s.github.io/
 - Cross-session settings persistence
 - Responsive design for all screen sizes
 
-### v1.1.0 (June 2, 2025)
+### v1.1.0 (July 2, 2025)
 - Removed scripting permission
 - Fixed critical bugs
 
