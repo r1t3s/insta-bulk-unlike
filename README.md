@@ -1,8 +1,8 @@
 # 🚀 Insta Bulk Unlike - Social Media Manager
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg?style=for-the-badge)](https://github.com/r1t3s/insta-bulk-unlike/releases)
-[![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg?style=for-the-badge)](https://github.com/r1t3s)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg?style=for-the-badge)](https://github.com/rxtsh/insta-bulk-unlike/releases)
+[![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg?style=for-the-badge)](https://github.com/rxtsh)
 
 > **Efficiently manage your Instagram liked posts with smart batch processing, safety features, and customizable speed controls.**
 
@@ -49,11 +49,11 @@
 
 | Main Interface | Speed Presets | Advanced Settings |
 |----------------|---------------|-------------------|
-| ![Main](https://github.com/r1t3s/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-main-interface.png) | ![Speed](https://github.com/r1t3s/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-main-interface-2.png) | ![Settings](https://github.com/r1t3s/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-advanced-settings.png) |
+| ![Main](https://github.com/rxtsh/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-main-interface.png) | ![Speed](https://github.com/rxtsh/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-main-interface-2.png) | ![Settings](https://github.com/rxtsh/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-advanced-settings.png) |
 
 | Progress Tracking | Safety Features |
 |-------------------|-----------------|
-| ![Progress](https://github.com/r1t3s/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-processing-demo.png) | ![Safety](https://github.com/r1t3s/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-safety-features.png) |
+| ![Progress](https://github.com/rxtsh/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-processing-demo.png) | ![Safety](https://github.com/rxtsh/insta-bulk-unlike/blob/main/screenshots/insta-bulk-unlike-safety-features.png) |
 
 ## 🚀 Installation
 
@@ -200,7 +200,7 @@
 - **Permission Scope**: Limited to Instagram.com only
 
 ### Privacy Policy
-Full privacy policy available at: [privacy-policy.html](https://r1t3s.github.io/insta-bulk-unlike/privacy-policy.html)
+Full privacy policy available at: [privacy-policy.html](https://rxtsh.github.io/insta-bulk-unlike/privacy-policy.html)
 
 ## 📈 Roadmap
 
